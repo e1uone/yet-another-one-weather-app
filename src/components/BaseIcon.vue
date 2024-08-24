@@ -16,7 +16,7 @@ function getImageUrl(name) {
 }
 </script>
 <template>
-  <img class="base-icon" :src="getImageUrl(name)" />
+  <img class="base-icon" :src="getImageUrl(name)" :alt="`icon-${name}`" />
 </template>
 <style scoped>
 .base-icon {
