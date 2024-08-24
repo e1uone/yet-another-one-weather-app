@@ -7,7 +7,7 @@ const defaultOptions = {
     Authorization: "Token " + apiKey,
   },
 };
-const baseUrl = "http://suggestions.dadata.ru";
+const baseUrl = "https://suggestions.dadata.ru";
 
 export const getDadata = async (query) => {
   const options = {
