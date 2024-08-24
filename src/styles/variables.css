@@ -1,0 +1,8 @@
+:root {
+  --cloudy: rgb(142, 220, 230);
+  --sunny: #f0cf65ff;
+  --rainy: #56638aff;
+  --text-error: #ff1b1cff;
+  --text-black: #000;
+  --text-white: #f5f5f5;
+}

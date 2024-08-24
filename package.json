@@ -1,0 +1,33 @@
+{
+  "name": "yet-another-one-weather-app",
+  "private": true,
+  "version": "1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint `src/**/*.{js,vue}`"
+  },
+  "dependencies": {
+    "vue": "^3.4.26",
+    "vue-debounce": "^5.0.0",
+    "vue-toast-notification": "^3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@vite-pwa/assets-generator": "^0.2.4",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "vite": "^5.2.10",
+    "vite-plugin-pwa": "^0.20.0",
+    "workbox-window": "^7.1.0"
+  },
+  "resolutions": {
+    "sharp": "0.32.6",
+    "sharp-ico": "0.1.5"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}
