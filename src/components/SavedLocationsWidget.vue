@@ -90,11 +90,15 @@ onMounted(() => {
   @media screen and (max-width: 600px) {
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 1rem 0rem;
   }
 }
 .saved-locations-widget__location-item {
   @media screen and (max-width: 600px) {
     width: auto;
+  }
+  @media screen and (max-width: 400px) {
+    width: 100%;
   }
 }
 

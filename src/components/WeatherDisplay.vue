@@ -113,7 +113,7 @@ defineProps({
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 0 1rem;
+  padding: 0 1rem 2rem 1rem;
 }
 
 .weather-display__top {
