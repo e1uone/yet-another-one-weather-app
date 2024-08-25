@@ -26,10 +26,10 @@ const getLocationName = (location) => {
 </template>
 <style scoped>
 .location-item {
-  background: rgba(0, 0, 0, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--border-color-0);
   width: 100%;
-  color: var(--text-white);
+  color: var(--text-color-0);
   appearance: none;
   outline: none;
   font-size: 1rem;
@@ -40,18 +40,22 @@ const getLocationName = (location) => {
   align-items: center;
   border-radius: 10px;
   padding: 0 0.85rem;
+  transition: background 0.1s, border-color 0.15s ease-in-out;
 }
 
 .location-item:hover {
   background: rgba(0, 0, 0, 0.3);
+  border-color: var(--border-color-1);
 }
 
 .location-item:focus-visible {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
+  border-color: var(--border-color-1);
 }
 
 .location-item--active {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.25);
+  border-color: var(--border-color-1);
 }
 
 .location-item__location-title {

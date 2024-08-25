@@ -103,7 +103,7 @@ onMounted(() => {
 }
 
 .saved-locations-widget--empty {
-  color: var(--text-white);
+  color: var(--text-color-0);
   display: flex;
   height: 100%;
   flex: 1;

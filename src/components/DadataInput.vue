@@ -98,21 +98,23 @@ const onInput = (e) => {
         @blur="onInputBlur"
       />
     </div>
-    <!-- menu -->
 
-    <div
-      v-if="inputFocused && suggestionsVisible"
-      class="dadata-suggestion-menu"
-    >
+    <!-- menu -->
+    <transition name="fade" appear>
       <div
-        v-for="(suggestionItem, index) in suggestionList"
-        :key="`suggestion_${index}`"
-        class="dadata-suggestion-item"
-        @mousedown="onSuggestionClick(index)"
+        v-if="inputFocused && suggestionsVisible"
+        class="dadata-suggestion-menu"
       >
-        {{ suggestionItem.value }}
+        <div
+          v-for="(suggestionItem, index) in suggestionList"
+          :key="`suggestion_${index}`"
+          class="dadata-suggestion-item"
+          @mousedown="onSuggestionClick(index)"
+        >
+          {{ suggestionItem.value }}
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 <style scoped>
@@ -122,22 +124,21 @@ const onInput = (e) => {
 
 .dadata-input-search {
   input {
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--text-color-0);
     font-size: 1rem;
     width: 100%;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid var(--border-color-0);
     outline: none;
     appearance: none;
-    transition: color 0.5s, background 0.3s;
+    transition: background 0.2s;
     border-radius: 5px;
     padding: 0.5rem;
     background: rgba(0, 0, 0, 0.1);
   }
   input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--text-color-0);
   }
   input:hover {
-    outline: none;
     background: rgba(0, 0, 0, 0.2);
   }
   input:focus {
@@ -151,19 +152,22 @@ const onInput = (e) => {
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: white;
+  background-color: var(--main-color-0);
+  color: var(--text-color-0);
   z-index: 10;
   border-radius: 5px;
   margin-top: 5px;
-  color: black;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .dadata-suggestion-item {
   cursor: pointer;
   padding: 0.5rem 1rem;
+  transition: background 0.1s;
 }
 
 .dadata-suggestion-item:hover {
-  background-color: #dddddd;
+  background-color: var(--main-color-1);
 }
 </style>

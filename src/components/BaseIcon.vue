@@ -20,6 +20,7 @@ function getImageUrl(name) {
 </template>
 <style scoped>
 .base-icon {
+  -webkit-user-drag: none;
   width: v-bind(size);
   filter: invert(77%) sepia(92%) saturate(18%) hue-rotate(13deg)
     brightness(110%) contrast(111%);

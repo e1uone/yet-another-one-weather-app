@@ -46,7 +46,7 @@ defineProps({
         {{ `${weather.cloudiness}%` }}
       </div>
       <div>
-        <BaseIcon name="wind" size="50px" />
+        <BaseIcon name="wind" size="35px" />
         {{ `${weather.windSpeed} m/s` }}
       </div>
       <div>
@@ -172,7 +172,11 @@ defineProps({
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 3rem;
+  gap: 1rem;
+
+  @media screen and (max-width: 600px) {
+    padding-bottom: 3rem;
+  }
 }
 
 .weather-display__temperature-button {
@@ -181,15 +185,16 @@ defineProps({
   font-size: 2rem;
   color: inherit;
   cursor: pointer;
+  transition: color 0.1s;
 }
 
 .weather-display__temperature-button:hover {
-  color: #808080;
+  color: var(--text-color-1);
 }
 
 .weather-display__temperature-button:focus-visible {
   outline: none;
-  color: #808080;
+  color: var(--text-color-1);
 }
 
 .weather-display__description {
@@ -204,7 +209,7 @@ defineProps({
   height: 100%;
   align-items: center;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 .weather-display__icon {
   height: 80px;

@@ -108,15 +108,15 @@ onMounted(() => {
           placeholder=" Search your city..."
           @update:dadata-result="onDadataResultUpdate($event)"
         />
-
-        <WeatherDisplay
-          v-show="!isWeatherFetching"
-          class="weather-app__weather-display"
-          :weather="currentWeather"
-          :is-error="isWeatherFetchingError"
-        />
-
-        <WeatherLoader v-show="isWeatherFetching" class="weather-app__loader" />
+        <transition name="fade" mode="out-in" :css="true" appear>
+          <WeatherDisplay
+            v-if="!isWeatherFetching"
+            class="weather-app__weather-display"
+            :weather="currentWeather"
+            :is-error="isWeatherFetchingError"
+          />
+          <WeatherLoader v-else class="weather-app__loader" />
+        </transition>
       </section>
 
       <SavedLocationsWidget
@@ -152,13 +152,17 @@ onMounted(() => {
 }
 
 .weather-app {
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  min-height: 500px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+  min-height: 620px;
   width: 100%;
   padding: 1rem 0;
   display: flex;
   border-radius: 10px;
-  background: linear-gradient(to bottom, #8fdbe6 0%, rgb(107, 197, 211) 100%);
+  background: linear-gradient(
+    to bottom,
+    var(--main-color-1) 0%,
+    var(--main-color-0) 100%
+  );
 
   @media screen and (max-width: 600px) {
     border-radius: 0px;
@@ -192,12 +196,12 @@ onMounted(() => {
 
 .weather-app__saved-locations-widget {
   width: 150px;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid var(--divider-color);
 
   @media screen and (max-width: 600px) {
     width: 100%;
     border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid var(--divider-color);
   }
 }
 </style>
