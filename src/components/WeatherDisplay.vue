@@ -143,6 +143,7 @@ defineProps({
   display: flex;
   flex-direction: column;
 }
+
 .weather-display__temperature-container {
   display: flex;
   justify-content: center;
@@ -164,12 +165,6 @@ defineProps({
     gap: 0.25rem;
     align-items: center;
   }
-}
-
-.weather-display__description {
-  text-align: center;
-  font-size: 1.5rem;
-  text-transform: capitalize;
 }
 
 .weather-display__bottom {
@@ -197,12 +192,19 @@ defineProps({
   color: #808080;
 }
 
+.weather-display__description {
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
 .weather-display__error {
   display: flex;
   justify-content: center;
   height: 100%;
   align-items: center;
   text-align: center;
+  font-size: 1.5rem;
 }
 .weather-display__icon {
   height: 80px;

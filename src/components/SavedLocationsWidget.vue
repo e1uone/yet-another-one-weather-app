@@ -97,7 +97,7 @@ onMounted(() => {
   @media screen and (max-width: 600px) {
     width: auto;
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 420px) {
     width: 100%;
   }
 }

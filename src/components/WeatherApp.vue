@@ -155,7 +155,7 @@ onMounted(() => {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   min-height: 500px;
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
   display: flex;
   border-radius: 10px;
   background: linear-gradient(to bottom, #8fdbe6 0%, rgb(107, 197, 211) 100%);
@@ -163,7 +163,7 @@ onMounted(() => {
   @media screen and (max-width: 600px) {
     border-radius: 0px;
     flex-direction: column;
-
+    padding: 1rem;
     flex: 1;
   }
 }
