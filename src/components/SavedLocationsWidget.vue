@@ -81,7 +81,7 @@ onMounted(() => {
 </template>
 <style scoped>
 .saved-locations-widget {
-  width: 100px;
+  min-width: 200px;
   padding: 1rem;
   display: flex;
   flex-direction: column;

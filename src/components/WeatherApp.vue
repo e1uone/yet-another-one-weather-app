@@ -16,7 +16,7 @@ const dadataResult = ref(null);
 const selectedLocation = ref(null);
 const currentWeather = ref();
 const savedLocationsRef = ref(null);
-const isWeatherFetching = ref(false);
+const isWeatherFetching = ref(true);
 const isWeatherFetchingError = ref(false);
 
 let pendingWeatherController = null;
@@ -130,7 +130,7 @@ onMounted(() => {
 <style scoped>
 .weather-app-wrapper {
   min-height: 100dvh;
-  max-width: 33rem;
+  max-width: 38rem;
 
   margin: 0 auto;
   display: flex;

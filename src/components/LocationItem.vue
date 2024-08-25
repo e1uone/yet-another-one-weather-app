@@ -10,9 +10,7 @@ defineProps({
   },
 });
 const getLocationName = (location) => {
-  return (
-    location.data.city || location.data.area_with_type || location.data.country
-  );
+  return `${location.data.city}, ${location.data.country}`;
 };
 </script>
 <template>
