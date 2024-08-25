@@ -48,7 +48,7 @@ const getLocationName = (location) => {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.location-item:focus {
+.location-item:focus-visible {
   background: rgba(0, 0, 0, 0.5);
 }
 

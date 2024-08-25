@@ -170,13 +170,9 @@ defineProps({
   color: #808080;
 }
 
-.weather-display__temperature-button:focus {
+.weather-display__temperature-button:focus-visible {
   outline: none;
   color: #808080;
-}
-.weather-display__temperature-button:focus:not(:focus-visible):not(:hover) {
-  outline: none;
-  color: inherit;
 }
 
 .weather-display__error {
