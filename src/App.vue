@@ -15,7 +15,10 @@ usePWA();
 .theme-switcher {
   position: fixed;
   top: 10px;
-  right: 10px;
+  right: 1rem;
   z-index: 10;
+  @media screen and (max-width: 600px) {
+    top: 9rem;
+  }
 }
 </style>
