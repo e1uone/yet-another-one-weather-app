@@ -30,7 +30,7 @@ defineProps({
         temperatureHighCelsius: 0,
         temperatureLow: 32,
         temperatureLowCelsius: 0,
-        location: "",
+        location: "Unknown location",
         description: "",
         iconName: "weather-cloud",
       };
@@ -56,38 +56,47 @@ defineProps({
     </section>
 
     <section class="weather-display__main">
-      <div class="weather-display__temperature">
-        {{
-          isCelsius ? weather.temperatureValueCelsius : weather.temperatureValue
-        }}
-      </div>
-      <div class="weather-display__temperature-side">
-        <button
-          class="weather-display__temperature-button"
-          type="button"
-          @click="changeTemperatureType()"
-        >
-          {{ `°${temperatureType}` }}
-        </button>
-        <div>
-          <BaseIcon name="arrow-up" size="15px" />
+      <p class="weather-display__location">
+        {{ weather.location }}
+      </p>
+      <div class="weather-display__temperature-container">
+        <div class="weather-display__temperature">
           {{
-            `${
-              isCelsius
-                ? weather.temperatureHighCelsius
-                : weather.temperatureHigh
-            }°${temperatureType}`
+            isCelsius
+              ? weather.temperatureValueCelsius
+              : weather.temperatureValue
           }}
         </div>
+        <div class="weather-display__temperature-side">
+          <button
+            class="weather-display__temperature-button"
+            type="button"
+            @click="changeTemperatureType()"
+          >
+            {{ `°${temperatureType}` }}
+          </button>
+          <div>
+            <BaseIcon name="arrow-up" size="15px" />
+            {{
+              `${
+                isCelsius
+                  ? weather.temperatureHighCelsius
+                  : weather.temperatureHigh
+              }°${temperatureType}`
+            }}
+          </div>
 
-        <div>
-          <BaseIcon name="arrow-down" size="15px" />
+          <div>
+            <BaseIcon name="arrow-down" size="15px" />
 
-          {{
-            `${
-              isCelsius ? weather.temperatureLowCelsius : weather.temperatureLow
-            }°${temperatureType}`
-          }}
+            {{
+              `${
+                isCelsius
+                  ? weather.temperatureLowCelsius
+                  : weather.temperatureLow
+              }°${temperatureType}`
+            }}
+          </div>
         </div>
       </div>
     </section>
@@ -96,14 +105,14 @@ defineProps({
       <div class="weather-display__icon">
         <BaseIcon :name="weather.iconName" size="5rem" />
       </div>
-    </section>
 
-    <section v-if="isError" class="weather-display__error">
-      There's a problem at the weather forecast server :(
-    </section>
+      <section v-if="isError" class="weather-display__error">
+        There's a problem at the weather forecast server :(
+      </section>
 
-    <section v-else class="weather-display__description">
-      {{ weather.description }}
+      <section v-else class="weather-display__description">
+        {{ weather.description }}
+      </section>
     </section>
   </div>
 </template>
@@ -112,6 +121,7 @@ defineProps({
   user-select: none;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 1rem;
   padding: 0 1rem 2rem 1rem;
 }
@@ -128,10 +138,20 @@ defineProps({
     gap: 0.5rem;
   }
 }
+
 .weather-display__main {
+  display: flex;
+  flex-direction: column;
+}
+.weather-display__temperature-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.weather-display__location {
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .weather-display__temperature {
@@ -154,8 +174,10 @@ defineProps({
 
 .weather-display__bottom {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 3rem;
 }
 
 .weather-display__temperature-button {

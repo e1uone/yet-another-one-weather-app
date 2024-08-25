@@ -136,10 +136,12 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 
   @media screen and (max-width: 600px) {
     max-width: 100%;
     width: 100%;
+    padding: 0;
     flex-direction: column;
   }
 }
@@ -161,6 +163,7 @@ onMounted(() => {
   @media screen and (max-width: 600px) {
     border-radius: 0px;
     flex-direction: column;
+
     flex: 1;
   }
 }
