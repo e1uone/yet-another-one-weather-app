@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 import { onMounted, ref } from "vue";
 import { getWeather } from "../services/weather-service";
 import { getDadataByCoordinates } from "../services/dadata-service";

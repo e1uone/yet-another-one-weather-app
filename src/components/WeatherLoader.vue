@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 import LoadingSpinner from "./LoadingSpinner.vue";
 </script>
 <template>

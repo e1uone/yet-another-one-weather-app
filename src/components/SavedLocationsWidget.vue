@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 import { onMounted, ref } from "vue";
 import LocationItem from "./LocationItem.vue";
 const locations = ref([]);

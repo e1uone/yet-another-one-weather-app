@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 defineProps({
   location: {
     type: Object,

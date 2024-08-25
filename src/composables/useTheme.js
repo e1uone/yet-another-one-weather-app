@@ -12,8 +12,8 @@ export function useTheme() {
     if (!availableThemes.includes(theme)) {
       return;
     }
-
     document.documentElement.className = theme;
+    currentTheme.value = theme;
     localStorage.setItem("theme", theme);
   };
 

@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 import BaseIcon from "./BaseIcon.vue";
 import { ref, computed } from "vue";
 
