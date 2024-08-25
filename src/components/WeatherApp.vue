@@ -129,7 +129,7 @@ onMounted(() => {
 </template>
 <style scoped>
 .weather-app-wrapper {
-  height: 100dvh;
+  min-height: 100dvh;
   max-width: 33rem;
 
   margin: 0 auto;
@@ -173,6 +173,7 @@ onMounted(() => {
 
   @media screen and (max-width: 600px) {
     justify-content: center;
+    padding: 0;
   }
 }
 
