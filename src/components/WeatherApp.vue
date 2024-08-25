@@ -140,6 +140,7 @@ onMounted(() => {
   @media screen and (max-width: 600px) {
     max-width: 100%;
     width: 100%;
+    flex-direction: column;
   }
 }
 
@@ -160,7 +161,7 @@ onMounted(() => {
   @media screen and (max-width: 600px) {
     border-radius: 0px;
     flex-direction: column;
-    min-height: 100%;
+    flex: 1;
   }
 }
 
